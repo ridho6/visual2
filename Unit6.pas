@@ -92,25 +92,13 @@ if edt1.Text = '' then
 begin
 ShowMessage('Nama Supplier Tidak Boleh Kosong!');
 end else
-if edt1.Text = DataModule4.Zsupplier.Fields[1].AsString then
-begin
-ShowMessage('Nama Supplier '+edt1.Text+' Tidak Ada Perubahan');
-end else
 
 begin //kode update
 with DataModule4.Zsupplier do
 begin
 SQL.Clear;
-SQL.Add('update supplier set nik="'+edt1.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set name="'+edt2.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set telp="'+edt3.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set email="'+edt4.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set alamat="'+edt5.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set perusahaan="'+edt6.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set nama_bank="'+edt7.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set nama_akun_bank="'+edt8.text+'" where id= "'+a+'"');
-SQL.Add('update supplier set no_akun_bank="'+edt9.text+'" where id= "'+a+'"');
-ExecSQL ;
+SQL.Add('update supplier set nik="'+edt1.text+'", name="'+edt2.text+'", telp="'+edt3.text+'", email="'+edt4.text+'", alamat="'+edt5.text+'", perusahaan="'+edt6.text+'", nama_bank="'+edt7.text+'", nama_akun_bank="'+edt8.text+'", no_akun_bank="'+edt9.text+'" where id= "'+a+'"');
+ExecSQL;
 SQL.Clear;
 SQL.Add('select * from supplier');
 Open;

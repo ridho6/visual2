@@ -42,6 +42,7 @@ type
     procedure btn6Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure cbb1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,16 +60,19 @@ uses Unit4, Unit8;
 
 procedure TForm7.dbgrd1CellClick(Column: TColumn);
 begin
-edt1.Text := DataModule4.Zsupplier.Fields[1].AsString;
-edt2.Text := DataModule4.Zsupplier.Fields[2].AsString;
-edt3.Text := DataModule4.Zsupplier.Fields[3].AsString;
-edt4.Text := DataModule4.Zsupplier.Fields[4].AsString;
-a:= DataModule4.Zsupplier.Fields[0].AsString;
+edt1.Text := DataModule4.Zkustomer.Fields[1].AsString;
+edt2.Text := DataModule4.Zkustomer.Fields[2].AsString;
+edt3.Text := DataModule4.Zkustomer.Fields[3].AsString;
+edt4.Text := DataModule4.Zkustomer.Fields[4].AsString;
+edt6.Text := DataModule4.Zkustomer.Fields[5].AsString;
+cbb1.Text := DataModule4.Zkustomer.Fields[6].AsString;
+a:= DataModule4.Zkustomer.Fields[0].AsString;
 edt1.Enabled:= True;
 edt2.Enabled:= True;
 edt3.Enabled:= True;
 edt4.Enabled:= True;
 edt6.Enabled:= True;
+cbb1.Enabled:= True;
 btn2.Enabled:= True;
 btn3.Enabled:= True;
 btn5.Enabled:= True;
@@ -91,7 +95,7 @@ Begin // simpan
 with DataModule4.Zkustomer do
 begin
 SQL.Clear;
-SQL.Add('insert into kustomer values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt6.Text+'")');
+SQL.Add('insert into kustomer values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt6.Text+'","'+cbb1.Text+'")');
 ExecSQL ;
 SQL.Clear;
 SQL.Add('select * from kustomer');
@@ -107,21 +111,13 @@ if edt1.Text = '' then
 begin
 ShowMessage('Nama Kustomer Tidak Boleh Kosong!');
 end else
-if edt1.Text = DataModule4.Zkustomer.Fields[1].AsString then
-begin
-ShowMessage('Nama Kustomer '+edt1.Text+' Tidak Ada Perubahan');
-end else
 
 begin //kode update
 with DataModule4.Zkustomer do
 begin
 SQL.Clear;
-SQL.Add('update kustomer set nik="'+edt1.Text+'" where id= "'+a+'"');
-SQL.Add('update kustomer set name="'+edt2.Text+'" where id= "'+a+'"');
-SQL.Add('update kustomer set alamat="'+edt3.Text+'" where id= "'+a+'"');
-SQL.Add('update kustomer set telp="'+edt4.Text+'" where id= "'+a+'"');
-SQL.Add('update kustomer set email="'+edt6.Text+'" where id= "'+a+'"');
-ExecSQL ;
+SQL.Add('update kustomer set nik="'+edt1.Text+'", name="'+edt2.Text+'",alamat="'+edt3.Text+'", telp="'+edt4.Text+'", email="'+edt6.Text+'", member="'+cbb1.Text+'" where id= "'+a+'"');
+ExecSQL;
 SQL.Clear;
 SQL.Add('select * from kustomer');
 Open;
@@ -141,7 +137,7 @@ SQL.Clear;
 SQL.Add('delete from kustomer where id= "'+a+'"');
 ExecSQL ;
 SQL.Clear;
-SQL.Add('select * from supplier');
+SQL.Add('select * from kustomer');
 Open;
 end;
 ShowMessage('Data Berhasil DiDelete!');
@@ -219,6 +215,14 @@ end;
 procedure TForm7.FormShow(Sender: TObject);
 begin
 posisiawal;
+end;
+
+procedure TForm7.cbb1Change(Sender: TObject);
+begin
+if cbb1.Text = 'Yes' then
+lbl9.Caption := '10%'
+else if cbb1.Text = 'No' then
+lbl9.Caption := '5%'
 end;
 
 end.

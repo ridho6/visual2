@@ -64,18 +64,17 @@ object Form7: TForm7
     Caption = 'MEMBER'
   end
   object lbl8: TLabel
-    Left = 272
+    Left = 184
     Top = 232
     Width = 54
     Height = 13
     Caption = 'DISKON    :'
   end
   object lbl9: TLabel
-    Left = 344
+    Left = 248
     Top = 232
-    Width = 16
+    Width = 3
     Height = 13
-    Caption = 'lbl9'
   end
   object edt1: TEdit
     Left = 104
@@ -191,10 +190,12 @@ object Form7: TForm7
   object cbb1: TComboBox
     Left = 104
     Top = 232
-    Width = 145
+    Width = 65
     Height = 21
     ItemHeight = 13
     TabOrder = 13
+    Text = '--PILIH--'
+    OnChange = cbb1Change
     Items.Strings = (
       'Yes'
       'No')

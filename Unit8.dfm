@@ -878,6 +878,21 @@ object Form8: TForm8
             'Email')
           ParentFont = False
         end
+        object Memo15: TfrxMemoView
+          Left = 657.638220000000000000
+          Width = 71.811070000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Memo.UTF8 = (
+            'Member')
+          ParentFont = False
+        end
       end
       object MasterData1: TfrxMasterData
         Height = 18.897650000000000000
@@ -986,6 +1001,23 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Memo.UTF8 = (
             '[frxDBDataset4."email"]')
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          Left = 657.638220000000000000
+          Width = 71.811070000000000000
+          Height = 18.897650000000000000
+          DataField = 'member'
+          DataSet = frxDBDataset4
+          DataSetName = 'frxDBDataset4'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Memo.UTF8 = (
+            '[frxDBDataset4."member"]')
           ParentFont = False
         end
       end
