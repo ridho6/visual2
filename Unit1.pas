@@ -27,6 +27,9 @@ type
     procedure LOGIN1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure KATEGORI1Click(Sender: TObject);
+    procedure SATUAN1Click(Sender: TObject);
+    procedure SUPPLIER1Click(Sender: TObject);
+    procedure KUSTOMER1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +41,7 @@ var
 
 implementation
 
-uses Unit2, Unit3;
+uses Unit2, Unit3, Unit5, Unit6, Unit7;
 
 {$R *.dfm}
 
@@ -49,14 +52,30 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
-mm1.Items[1].Visible:=False;
-mm1.Items[2].Visible:=False;
-mm1.Items[3].Visible:=False;
+mm1.Items[1].Visible:= False;
+mm1.Items[2].Visible:= False;
+mm1.Items[3].Visible:= False;
 end;
 
 procedure TForm1.KATEGORI1Click(Sender: TObject);
 begin
 form3.Show;
+end;
+
+
+procedure TForm1.SATUAN1Click(Sender: TObject);
+begin
+form5.Show;
+end;
+
+procedure TForm1.SUPPLIER1Click(Sender: TObject);
+begin
+form6.Show;
+end;
+
+procedure TForm1.KUSTOMER1Click(Sender: TObject);
+begin
+form7.Show;
 end;
 
 end.

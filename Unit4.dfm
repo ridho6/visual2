@@ -2,8 +2,8 @@ object DataModule4: TDataModule4
   OldCreateOrder = False
   Left = 192
   Top = 144
-  Height = 150
-  Width = 215
+  Height = 375
+  Width = 551
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
     AutoEncodeStrings = False
@@ -26,12 +26,58 @@ object DataModule4: TDataModule4
     SQL.Strings = (
       'select * from kategori')
     Params = <>
-    Left = 104
-    Top = 24
+    Properties.Strings = (
+      'select * from kategori')
+    Left = 96
+    Top = 16
   end
   object dskategori: TDataSource
     DataSet = Zkategori
-    Left = 160
-    Top = 32
+    Left = 152
+    Top = 16
+  end
+  object Zsatuan: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from satuan')
+    Params = <>
+    Left = 96
+    Top = 64
+  end
+  object dssatuan: TDataSource
+    DataSet = Zsatuan
+    Left = 152
+    Top = 64
+  end
+  object Zsupplier: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from supplier')
+    Params = <>
+    Properties.Strings = (
+      '')
+    Left = 96
+    Top = 120
+  end
+  object dssupplier: TDataSource
+    DataSet = Zsupplier
+    Left = 152
+    Top = 120
+  end
+  object Zkustomer: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from kustomer')
+    Params = <>
+    Left = 96
+    Top = 168
+  end
+  object dskustomer: TDataSource
+    DataSet = Zkustomer
+    Left = 152
+    Top = 168
   end
 end

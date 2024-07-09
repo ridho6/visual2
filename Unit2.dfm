@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 192
-  Top = 144
-  Width = 949
-  Height = 491
+  Left = 597
+  Top = 266
+  Width = 360
+  Height = 222
   Caption = 'LOGIN'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
