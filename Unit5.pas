@@ -82,21 +82,19 @@ end;
 
 procedure TForm5.btn2Click(Sender: TObject);
 begin
-if edt1.Text = '' then
+ if edt1.Text = '' then
 begin
 ShowMessage('Nama Satuan Tidak Boleh Kosong!');
 end else
-if edt1.Text = DataModule4.Zsatuan.Fields[1].AsString then
-begin
-end else
+
 
 begin //kode update
 with DataModule4.Zsatuan do
 begin
 SQL.Clear;
-SQL.Add('update satuan set name="'+edt1.text+'" where id= "'+a+'"');
-SQL.Add('update satuan set diskripsi="'+edt2.text+'" where id= "'+a+'"');
+SQL.Add('update satuan set name="'+edt1.text+'", diskripsi="'+edt2.text+'" where id= "'+a+'"');
 ExecSQL ;
+
 SQL.Clear;
 SQL.Add('select * from satuan');
 Open;

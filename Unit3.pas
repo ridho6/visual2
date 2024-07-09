@@ -91,7 +91,6 @@ end;
 ShowMessage('Data Berhasil Diupdate!');
 end;
 posisiawal;
-
 end;
 
 procedure TForm3.dbgrd1CellClick(Column: TColumn);
